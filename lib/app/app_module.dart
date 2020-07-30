@@ -1,3 +1,5 @@
+import 'package:agibus_mobile/app/modules/card_crud/card_crud_module.dart';
+
 import 'app_controller.dart';
 import 'package:flutter_modular/flutter_modular.dart';
 import 'package:flutter/material.dart';
@@ -12,7 +14,9 @@ class AppModule extends MainModule {
 
   @override
   List<Router> get routers => [
-        Router(Modular.initialRoute, module: HomeModule()),
+        //Rota inicial deve ser a home, alterei para facilitar o desenvolvimento
+        Router(Modular.initialRoute, module: CardCrudModule()),
+
       ];
 
   @override

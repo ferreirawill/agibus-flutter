@@ -54,8 +54,8 @@ vars:
     get: flutter pub get
     runner: flutter pub run build_runner
 scripts: 
-    mobx_build: $clean & $get & $runner build --delete-conflicting-outputs
-    mobx_watch: $clean & $get & $runner watch --delete-conflicting-outputs
+    build: $clean & $get & $runner build --delete-conflicting-outputs
+    watch: $clean & $get & $runner watch --delete-conflicting-outputs
 
   # To add assets to your application, add an assets section, like this:
   # assets:

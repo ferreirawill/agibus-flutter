@@ -17,7 +17,11 @@ class _HomePageState extends ModularState<HomePage, HomeController> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text(widget.title),
+        title: Center(child: Text(widget.title)),
+        backgroundColor: Color.fromARGB(0, 0, 0, 0),
+        leading: IconButton(icon: Icon(Icons.menu),color: Colors.blueAccent,onPressed: (){
+          print("It was pressed");
+        },),
       ),
       body: Column(
         children: <Widget>[],
