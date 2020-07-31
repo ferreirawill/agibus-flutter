@@ -10,13 +10,13 @@ import 'package:flutter_modular/flutter_modular_test.dart';
 
 
 main(){
+  
   initModule(AppModule());
   initModule(HomeModule());
 
+  testWidgets("Test Menu Button", (tester) async{
 
-  testWidgets("Test Menu Button", (WidgetTester tester) async{
-
-    await tester.pumpWidget(HomePage());
+    await tester.pumpWidget(HomePage(title: "homepage",));
 
     final Finder iconFinder = find.byIcon(Icons.menu);
 
@@ -25,6 +25,10 @@ main(){
     final Icon icon = tester.widget(iconFinder);
 
     expect(icon,Icons.menu);
+
+  });
+
+  test("click",(){
 
   });
 }

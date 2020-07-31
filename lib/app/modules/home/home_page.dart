@@ -24,7 +24,14 @@ class _HomePageState extends ModularState<HomePage, HomeController> {
         },),
       ),
       body: Column(
-        children: <Widget>[],
+        children: <Widget>[
+        ],
+      ),
+      floatingActionButton: FloatingActionButton(
+        child: Icon(Icons.arrow_forward),
+        onPressed: (){
+          Navigator.pushNamed(context, "/CardCrud");
+        },
       ),
     );
   }

@@ -1,0 +1,38 @@
+syntax = "proto3";
+
+option go_package = "proto;users";
+
+package users;
+
+service UsersService {
+    rpc CreateUser(CreateUserRequest) returns (CreateUserResponse);
+    rpc LogUser(LogUserByEmailRequest) returns (LogUserByEmailResponse);
+}
+
+message User {
+    string name = 1;
+    string email = 2;
+    string password = 3;
+    string cpf = 4;
+    string uuid = 5;
+    
+}
+
+message CreateUserRequest {
+    string name = 1;
+    string email = 2;
+    string password = 3;
+}
+
+message CreateUserResponse {
+    User user = 1;
+}
+
+message LogUserByEmailRequest {
+    string email = 1;
+    string password = 2;
+}
+
+message LogUserByEmailResponse {
+    bool success = 1;
+}

@@ -1,0 +1,31 @@
+syntax = "proto3";
+
+package cards;
+
+service CardsService {
+    rpc CreateCard(CreateRequest) returns (CreateResponse) {}
+    rpc GetAllCards(GetAllRequest) returns (GetAllResponse) {}
+}
+
+message CreateRequest {
+    string number = 1;
+    string user_id = 2;
+}
+
+message CreateResponse {
+    Card createdCard = 1;
+}
+
+message GetAllRequest {
+    string user_id = 1;
+}
+
+message GetAllResponse {
+    repeated Card cards = 1;
+}
+
+message Card {
+    string id = 1;
+    string number = 2;
+    string user_id = 3;
+}
