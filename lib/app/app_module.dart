@@ -1,5 +1,6 @@
 import 'package:agibus_mobile/app/modules/card_crud/card_crud_module.dart';
 import 'package:agibus_mobile/app/modules/card_crud/card_crud_page.dart';
+import 'package:agibus_mobile/app/modules/repositories/card_repository.dart';
 
 import 'app_controller.dart';
 import 'package:flutter_modular/flutter_modular.dart';
@@ -15,6 +16,7 @@ class AppModule extends MainModule {
         Bind((i) => AppController()),
         Bind((i) => HomeModule()),
         Bind((i) => CardCrudController()),
+        Bind((i) => CardRepository()),
   ];
 
   @override
