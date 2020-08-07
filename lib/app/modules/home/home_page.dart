@@ -30,7 +30,7 @@ class _HomePageState extends ModularState<HomePage, HomeController> {
       floatingActionButton: FloatingActionButton(
         child: Icon(Icons.arrow_forward),
         onPressed: (){
-          Navigator.pushNamed(context, "/CardCrud");
+          Navigator.pushNamed(context, "/Login");
         },
       ),
     );

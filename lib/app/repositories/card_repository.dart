@@ -1,7 +1,6 @@
-import 'package:agibus_mobile/app/modules/models/card_model.dart';
-import 'package:agibus_mobile/app/utils/protos/cards.pb.dart';
+/*
 import 'package:agibus_mobile/app/utils/protos/cards.pbgrpc.dart';
-import 'package:agibus_mobile/app/utils/protos/cards.pb.dart';
+
 import 'package:grpc/grpc.dart';
 
 class CardRepository{
@@ -25,4 +24,4 @@ class CardRepository{
 
   }
 
-}
+}*/

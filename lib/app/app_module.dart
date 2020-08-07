@@ -1,6 +1,6 @@
 import 'package:agibus_mobile/app/modules/card_crud/card_crud_module.dart';
-import 'package:agibus_mobile/app/modules/card_crud/card_crud_page.dart';
-import 'package:agibus_mobile/app/modules/repositories/card_repository.dart';
+import 'package:agibus_mobile/app/modules/login/login_module.dart';
+import 'package:agibus_mobile/app/repositories/card_repository.dart';
 
 import 'app_controller.dart';
 import 'package:flutter_modular/flutter_modular.dart';
@@ -16,13 +16,14 @@ class AppModule extends MainModule {
         Bind((i) => AppController()),
         Bind((i) => HomeModule()),
         Bind((i) => CardCrudController()),
-        Bind((i) => CardRepository()),
+        //Bind((i) => CardRepository()),
   ];
 
   @override
   List<Router> get routers => [
-        Router(Modular.initialRoute, module: HomeModule()),
+        Router(Modular.initialRoute, module: LoginModule()),
         Router("/CardCrud", module: CardCrudModule()),
+        Router("/Login", module: LoginModule()),
       ];
 
   @override
