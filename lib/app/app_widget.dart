@@ -7,11 +7,10 @@ class AppWidget extends StatelessWidget {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       navigatorKey: Modular.navigatorKey,
-      title: 'Flutter Slidy',
+      title: 'AgiBus',
       theme: ThemeData(
         primarySwatch: Colors.blue,
         fontFamily: "Mulish",
-          cursorColor: Colors.white
       ),
       initialRoute: '/',
       onGenerateRoute: Modular.generateRoute,

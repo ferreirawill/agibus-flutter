@@ -1,6 +1,9 @@
 /*
-import 'package:agibus_mobile/app/utils/protos/cards.pbgrpc.dart';
 
+Verificar para o ssl
+https://grpc.io/docs/guides/auth/
+* */
+import 'package:agibus_mobile/app/utils/cards_protos/cards.pbgrpc.dart';
 import 'package:grpc/grpc.dart';
 
 class CardRepository{
@@ -24,4 +27,4 @@ class CardRepository{
 
   }
 
-}*/
+}

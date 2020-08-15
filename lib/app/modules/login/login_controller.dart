@@ -21,6 +21,12 @@ abstract class _LoginControllerBase with Store {
   @observable
   String password = "";
 
+  @observable
+  bool passwordVisibility = true;
+
+  @action
+  void setPasswordVisibility() => passwordVisibility = !passwordVisibility;
+
 
   @action
   void setEmail(String value) => email = value;
@@ -30,10 +36,10 @@ abstract class _LoginControllerBase with Store {
 
 
   @computed
-  bool get validateEmail => RegExp( r'^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$').hasMatch(email) || email.length > 5;
+  bool get validateEmail => (RegExp( r'^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$').hasMatch(email) && email.length > 5) || email.length <= 0;
 
   @computed
-  bool get validatePassword => password.length > 8 ;
+  bool get validatePassword => password.length > 8 || password.length <= 0;
 
   @computed
   bool get isFormValid => validatePassword && validatePassword;

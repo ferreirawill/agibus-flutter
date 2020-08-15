@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "428147150053",
+    "firebase_url": "https://agibusmobile-9638b.firebaseio.com",
+    "project_id": "agibusmobile-9638b",
+    "storage_bucket": "agibusmobile-9638b.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:428147150053:android:c904f2c4f4c7850bef180c",
+        "android_client_info": {
+          "package_name": "com.example.agibus_mobile"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "428147150053-sht9n1ds7on45pbshd267ln68limdtm0.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.agibus_mobile",
+            "certificate_hash": "40546a0e7ed8b9ff9996a0a82a6d2ac5128c71cb"
+          }
+        },
+        {
+          "client_id": "428147150053-vu0u2u8p7jsurame1tu84gmnv3375g12.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBdfCqq-O9nLqMa8TpcCUPlp_uHYMsvzIQ"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "428147150053-vu0u2u8p7jsurame1tu84gmnv3375g12.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

@@ -9,6 +9,28 @@ part of 'login_controller.dart';
 // ignore_for_file: non_constant_identifier_names, unnecessary_brace_in_string_interps, unnecessary_lambdas, prefer_expression_function_bodies, lines_longer_than_80_chars, avoid_as, avoid_annotating_with_dynamic
 
 mixin _$LoginController on _LoginControllerBase, Store {
+  Computed<bool> _$validateEmailComputed;
+
+  @override
+  bool get validateEmail =>
+      (_$validateEmailComputed ??= Computed<bool>(() => super.validateEmail,
+              name: '_LoginControllerBase.validateEmail'))
+          .value;
+  Computed<bool> _$validatePasswordComputed;
+
+  @override
+  bool get validatePassword => (_$validatePasswordComputed ??= Computed<bool>(
+          () => super.validatePassword,
+          name: '_LoginControllerBase.validatePassword'))
+      .value;
+  Computed<bool> _$isFormValidComputed;
+
+  @override
+  bool get isFormValid =>
+      (_$isFormValidComputed ??= Computed<bool>(() => super.isFormValid,
+              name: '_LoginControllerBase.isFormValid'))
+          .value;
+
   final _$emailAtom = Atom(name: '_LoginControllerBase.email');
 
   @override
@@ -39,8 +61,35 @@ mixin _$LoginController on _LoginControllerBase, Store {
     });
   }
 
+  final _$passwordVisibilityAtom =
+      Atom(name: '_LoginControllerBase.passwordVisibility');
+
+  @override
+  bool get passwordVisibility {
+    _$passwordVisibilityAtom.reportRead();
+    return super.passwordVisibility;
+  }
+
+  @override
+  set passwordVisibility(bool value) {
+    _$passwordVisibilityAtom.reportWrite(value, super.passwordVisibility, () {
+      super.passwordVisibility = value;
+    });
+  }
+
   final _$_LoginControllerBaseActionController =
       ActionController(name: '_LoginControllerBase');
+
+  @override
+  void setPasswordVisibility() {
+    final _$actionInfo = _$_LoginControllerBaseActionController.startAction(
+        name: '_LoginControllerBase.setPasswordVisibility');
+    try {
+      return super.setPasswordVisibility();
+    } finally {
+      _$_LoginControllerBaseActionController.endAction(_$actionInfo);
+    }
+  }
 
   @override
   void setEmail(String value) {
@@ -68,7 +117,11 @@ mixin _$LoginController on _LoginControllerBase, Store {
   String toString() {
     return '''
 email: ${email},
-password: ${password}
+password: ${password},
+passwordVisibility: ${passwordVisibility},
+validateEmail: ${validateEmail},
+validatePassword: ${validatePassword},
+isFormValid: ${isFormValid}
     ''';
   }
 }
