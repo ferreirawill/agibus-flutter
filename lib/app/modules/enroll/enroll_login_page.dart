@@ -1,6 +1,7 @@
 import 'package:agibus_mobile/app/global_widgets/custom_icon_button.dart';
 import 'package:agibus_mobile/app/global_widgets/green_button.dart';
 import 'package:agibus_mobile/app/global_widgets/underline_input_field.dart';
+import 'package:agibus_mobile/app/repositories/enroll_repositories.dart';
 
 import 'package:flutter/material.dart';
 import 'package:flutter_mobx/flutter_mobx.dart';
@@ -17,6 +18,8 @@ class EnrollLoginPage extends StatefulWidget {
 
 class _EnrollLoginPageState extends ModularState<EnrollLoginPage, EnrollController> {
   //use 'controller' variable to access controller
+
+  final EnrollRepository _enrollRepository = EnrollRepository();
 
   @override
   Widget build(BuildContext context) {
@@ -60,6 +63,9 @@ class _EnrollLoginPageState extends ModularState<EnrollLoginPage, EnrollControll
                   child: LoginButton(
                     text: "Usar minha conta do Facebook",
                     color: Color(0xFF4267B2),
+                    onPressed: (){
+                      _enrollRepository.createUsingFacebook();
+                    },
                   ),
                 ),
                 Padding(
@@ -67,6 +73,7 @@ class _EnrollLoginPageState extends ModularState<EnrollLoginPage, EnrollControll
                   child: LoginButton(
                     text: "Usar minha conta do Google",
                     color: Color(0xFFdb4a39),
+                    onPressed: (){},
                   ),
                 ),
                 Padding(
@@ -157,8 +164,9 @@ class _EnrollLoginPageState extends ModularState<EnrollLoginPage, EnrollControll
 class LoginButton extends StatelessWidget {
   final String text;
   final Color color;
+  final onPressed;
 
-  const LoginButton({Key key, @required this.text, @required this.color})
+  const LoginButton({Key key, @required this.text, @required this.color, this.onPressed})
       : super(key: key);
 
   @override
@@ -178,8 +186,9 @@ class LoginButton extends StatelessWidget {
           style: TextStyle(
               color: Colors.white, fontSize: 22, fontWeight: FontWeight.bold),
         ),
-        onPressed: () {},
+        onPressed: onPressed,
       ),
     );
   }
+
 }
