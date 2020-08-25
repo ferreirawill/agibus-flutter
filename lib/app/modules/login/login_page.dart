@@ -20,6 +20,7 @@ class _LoginPageState extends ModularState<LoginPage, LoginController> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      key: Key("loginPageKey"),
       resizeToAvoidBottomInset: false,
       backgroundColor: Color(0xFF18b4e8),
       body: Stack(
@@ -48,8 +49,11 @@ class _LoginPageState extends ModularState<LoginPage, LoginController> {
               height: 235,
               child: Column(
                 children: <Widget>[
-                  Observer(builder: (_){
+                  Observer(
+                    key: Key("LoginObserverKey"),
+                    builder: (_){
                     return UnderlineInputField(
+                      key:  Key("loginEmailField"),
                       hint: " E-mail",
                       obscure: false,
                       keyboard: TextInputType.emailAddress,
@@ -85,7 +89,9 @@ class _LoginPageState extends ModularState<LoginPage, LoginController> {
                           minWidith: 200.0,
                           height: 50.0,
                           title: "Avançar",
-                          onPressed: controller.isFormValid ? (){}:null,
+                          onPressed: controller.isFormValid ? (){
+                            Navigator.pushNamed(context, "/Home");
+                          }:null,
                         );
                       }),
                 ],

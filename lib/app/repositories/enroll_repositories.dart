@@ -28,6 +28,10 @@ class EnrollRepository{
       final AuthResult authResult = await FirebaseAuth.instance.signInWithCredential(credential);
 
       final FirebaseUser user = authResult.user;
+
+      print(googleSignInAuthentication.accessToken);
+      print("---------------------------------------------------------------------------------------");
+      print(googleSignInAuthentication.idToken);
     }
     catch(error){
       print("Ocorreu um erro: ${error}");
@@ -38,10 +42,11 @@ class EnrollRepository{
     print("Tentando logar");
 
     final result = await facebookLogin.logIn(["email"]);
-    
+    final AuthCredential credential = FacebookAuthProvider.getCredential(accessToken: result.accessToken.toString());
     switch (result.status) {
       case FacebookLoginStatus.loggedIn:
         print("Logado");
+        print("Expira em: ${result.accessToken.expires}");
         break;
       case FacebookLoginStatus.cancelledByUser:
         print("Cancelado pelo usuário");

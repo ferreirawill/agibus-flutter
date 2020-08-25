@@ -39,10 +39,10 @@ abstract class _LoginControllerBase with Store {
   bool get validateEmail => (RegExp( r'^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$').hasMatch(email) && email.length > 5) || email.length <= 0;
 
   @computed
-  bool get validatePassword => password.length > 8 || password.length <= 0;
+  bool get validatePassword => password.length >= 8 || password.length <= 0;
 
   @computed
-  bool get isFormValid => validatePassword && validatePassword;
+  bool get isFormValid => (validatePassword && validatePassword) && (password.length > 0) && (email.length > 0);
 
 
 }

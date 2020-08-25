@@ -73,7 +73,9 @@ class _EnrollLoginPageState extends ModularState<EnrollLoginPage, EnrollControll
                   child: LoginButton(
                     text: "Usar minha conta do Google",
                     color: Color(0xFFdb4a39),
-                    onPressed: (){},
+                    onPressed: (){
+                      _enrollRepository.createUsingGoogle();
+                    },
                   ),
                 ),
                 Padding(

@@ -65,7 +65,7 @@ abstract class _EnrollControllerBase with Store {
   bool get validateEmail => (RegExp( r'^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$').hasMatch(enrolledEmail) && enrolledEmail.length > 5) || enrolledEmail.length <=0;
 
   @computed
-  bool get validatePassword => enrolledPassword.length > 8  || enrolledPassword.length <=0;
+  bool get validatePassword => enrolledPassword.length >= 8  || enrolledPassword.length <=0;
 
   @computed
   bool get validateConfirmedPassword => (enrolledPassword == confirmedPassword?  true: false);
