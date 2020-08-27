@@ -1,17 +1,23 @@
+import 'pages/lines/lines_controller.dart';
+import 'pages/stations/stations_controller.dart';
+import 'pages/destiny/destiny_controller.dart';
 import 'home_controller.dart';
 import 'package:flutter_modular/flutter_modular.dart';
 import 'home_page.dart';
 
 class HomeModule extends ChildModule {
-@override
-List<Bind> get binds => [
-  Bind((i) => HomeController()),
-];
+  @override
+  List<Bind> get binds => [
+        Bind((i) => LinesController()),
+        Bind((i) => StationsController()),
+        Bind((i) => DestinyController()),
+        Bind((i) => HomeController()),
+      ];
 
-@override
-List<Router> get routers => [
-  Router(Modular.initialRoute, child: (_, args) => HomePage()),
-];
+  @override
+  List<Router> get routers => [
+        Router(Modular.initialRoute, child: (_, args) => HomePage()),
+      ];
 
-static Inject get to => Inject<HomeModule>.of();
+  static Inject get to => Inject<HomeModule>.of();
 }
