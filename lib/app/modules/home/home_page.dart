@@ -1,9 +1,8 @@
 import 'dart:ui';
 
-import 'package:agibus_mobile/app/global_widgets/green_button.dart';
-import 'package:agibus_mobile/app/modules/home/pages/destiny/destiny_page.dart';
-import 'package:agibus_mobile/app/modules/home/pages/lines/lines_page.dart';
-import 'package:agibus_mobile/app/modules/home/pages/stations/stations_page.dart';
+import 'submodules/stations/stations_page.dart';
+import 'submodules/destiny/destiny_page.dart';
+import 'submodules/lines/lines_page.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_modular/flutter_modular.dart';
 import 'package:qr_flutter/qr_flutter.dart';
@@ -184,7 +183,7 @@ class _HomePageState extends ModularState<HomePage, HomeController> {
           animation: pageViewController,
           builder: (context, snapshot) {
             return BottomNavigationBar(
-              currentIndex: pageViewController?.page?.round() ?? 0,
+              currentIndex: pageViewController.hasClients ? pageViewController?.page?.round() ?? 0: 0,
               backgroundColor: Color(0xFFf1f2ee),
               elevation: 10,
               onTap: (index){

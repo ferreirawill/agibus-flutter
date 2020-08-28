@@ -1,6 +1,6 @@
-import 'pages/lines/lines_controller.dart';
-import 'pages/stations/stations_controller.dart';
-import 'pages/destiny/destiny_controller.dart';
+import 'submodules/destiny/destiny_controller.dart';
+import 'submodules/stations/stations_controller.dart';
+import 'submodules/lines/lines_controller.dart';
 import 'home_controller.dart';
 import 'package:flutter_modular/flutter_modular.dart';
 import 'home_page.dart';
